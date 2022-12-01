@@ -9,41 +9,12 @@ $iduser=$_SESSION['idusuario'];
 $sql="SELECT usuario,nombreR FROM usuario WHERE idusuario='$iduser'";
 $resultado=$conexion->query($sql);
 $row=$resultado->fetch_assoc();//array asociativo
-
-$sql="SELECT idrol,rol FROM rol";
+$sql="SELECT idtema,tema FROM tema";
 $resultado=$conexion->query($sql);
-if(!empty($_POST)){
-    $nombreR = mysqli_real_escape_string($conexion,$_POST['nombreR']);
-    $apellidos = mysqli_real_escape_string($conexion,$_POST['apellidos']);
-    $email = mysqli_real_escape_string($conexion,$_POST['email']);
-    $profesion = mysqli_real_escape_string($conexion,$_POST['profesion']);
-    $usuario = mysqli_real_escape_string($conexion,$_POST['usuario']);
-    $rolusuario =$_POST['tipo_rol'];
-    $contrasena = mysqli_real_escape_string($conexion,$_POST['contrasena']);
-    $contrasena_encriptada=sha1($contrasena);
-
-    $sqlusuario= "SELECT idusuario FROM usuario WHERE usuario='$usuario'";
-    $resultadousuario = $conexion->query($sqlusuario);
-    $filas = $resultadousuario->num_rows;
-    if ($filas>0) {
-        echo "<script>
-        alert('El usuario ya existe');
-        window.location='agregaradmin.php';</script>";
-            }else{
-                $sqlusuario2 = "INSERT INTO usuario(usuario,contrasena,idrol,nombreR,apellidos,email,profesion) VALUES ('$usuario','$contrasena_encriptada','$rolusuario','$nombreR','$apellidos','$email','$profesion')";
-                $resultadouser=$conexion->query($sqlusuario2);
-                
-               if ($resultadouser>0) {
-                   echo "<script>
-       alert('Registro exitoso');
-       window.location='agregaradmin.php';</script>";
-               }else{
-                   echo "<script>
-       alert('Error al registrarse');
-       window.location='agregaradmin.php';</script>";
-                }
-            }
-        }
+$ID = $_GET['idparrafo']; //obtener id de url
+$parrafo= "SELECT idparrafo,parrafo,no_parrafo,idtema FROM parrafo WHERE idparrafo = '$ID'";
+$resultadoparrafo = $conexion->query($parrafo);
+$fila= $resultadoparrafo->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -190,44 +161,59 @@ if(!empty($_POST)){
     <form action="<?php $_SERVER["PHP_SELF"]?>"method="post">
     <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Nombre</span>
+    <span class="input-group-text" id="basic-addon1">Párrafo</span>
   </div>
-  <input type="text" name="nombreR" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="parrafo" class="form-control" aria-label="Username" value="<?php echo $fila['parrafo']; ?>"aria-describedby="basic-addon1">
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Apellidos</span>
+    <span class="input-group-text" id="basic-addon1">No.Párrafo</span>
   </div>
-  <input type="text" name="apellidos" class="form-control" class="form-control" placeholder="Apellidos" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="no_parrafo" class="form-control" class="form-control"value="<?php echo $fila['no_parrafo']; ?>" aria-label="Username" aria-describedby="basic-addon1">
 </div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">Profesión</span>
-  </div>
-  <input type="text" name="profesion" class="form-control" placeholder="Profesión" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-
 <div class="row mt">
-         <label class="col-sm-2 col-sm-2 control-label">Tipo de usuario</label>
+         <label class="col-sm-2 col-sm-2 control-label">Temas</label>
           		<div class="col-lg-4">
           			<div class="form-panel">
-                      
-            <select class="form-control" name="tipo_rol">
-                      <?php
-              while ($fila=$resultado->fetch_assoc()) {?> 
-  <option value="<?php echo $fila['idrol'] ?>"><?php echo $fila['rol']  ?></option>
-                <?php
+        <select class="form-control" name="temas" required>
+            <?php
+                while ($fila=$resultado->fetch_assoc()) {?> 
+                <option value="<?php echo $fila['idtema'] ?>"><?php echo $fila['tema']  ?></option>
+            <?php
                 }
-              ?>
-			</select>
-    </div>
-    </div>
-    </div>
-
-
+            ?>
+		</select>
+                    </div>
+                </div>
+</div>
 <br>
-<button type="submit"class="btn btn-secondary btn-lg btn-block mx-auto btn-e texto-enlace">Editar</button>
+<input class="form-control" type="hidden" name="ID" value="<?php echo $ID; ?>">
+<button type="submit" name="editar"class="btn btn-secondary btn-lg btn-block mx-auto btn-e texto-enlace">Editar</button>
 </form>
+<?php
+if (isset($_POST["editar"])) {
+  $parrafo = $_POST['parrafo'];
+  $no_parrafo = $_POST['no_parrafo'];
+  $temas= $_POST['temas'];
+  $id= $_POST['ID'];
+  $sqlmodificar = "UPDATE parrafo SET
+  parrafo= '$parrafo',
+  no_parrafo= '$no_parrafo',
+  idtema= '$temas'
+   WHERE idparrafo= '$id'";
+  $modificado = $conexion->query($sqlmodificar);
+  if ($modificado>0) {
+    echo "<script>
+  alert('Registro editado exitosamente');
+  window.location='ver-parrafo.php';</script>";
+  }else{
+    echo "<script>
+    alert('Error al modificar');
+    window.location='ver-parrafo.php';</script>";
+  }
+}
+
+?>
 <br><br>
 </section>
 

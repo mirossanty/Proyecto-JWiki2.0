@@ -10,9 +10,14 @@ $sql="SELECT usuario,nombreR FROM usuario WHERE idusuario='$iduser'";
 $resultado=$conexion->query($sql);
 $row=$resultado->fetch_assoc();//array asociativo
 
-$video= "SELECT video.idvideo,video.titulo,video.ruta_video, tema.tema 
-FROM video AS video INNER JOIN tema AS tema ON video.idtema = tema.idtema;";
-$resultadovideo = $conexion->query($video);
+$sql="SELECT idtema,tema FROM tema";
+$resultado=$conexion->query($sql);
+
+$ID = $_GET['idsubtema']; //obtener id de url
+$subtema= "SELECT idsubtema,subtema,no_subtema,descripcion,idtema FROM subtema WHERE idsubtema = '$ID'";
+$resultadosubtema = $conexion->query($subtema);
+$fila= $resultadosubtema->fetch_assoc();
+
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -150,45 +155,80 @@ $resultadovideo = $conexion->query($video);
 
 <section class="home-section">
 <div class="home-content">
-      <i class='bx bx-menu'></i>
-      <span class="titulo"><h2>Lista de vídeos registrados</h2z></span>
+      <i class='bx bx-menu' ></i>
+      <span class="titulo"><h2>Editar Subpárrafo agregado</h2z></span>
 </div>
-<div class="container f-c">
+<div class="container f-c texto">
     <br>
-    <div class="table">
-    <table class="table table-bordered border-dark">
-  <caption>Lista de vídeos</caption>
-  <thead>
-    <tr>
-      <th scope="col">Título</th>
-      <th scope="col">Ruta vídeo</th>
-      <th scope="col">Tema</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-                               while ($regvideo=$resultadovideo->fetch_array(MYSQLI_BOTH)) {
-                                echo "<tr>
-                                <td>".$regvideo['titulo']."</td>
-                                <td>".$regvideo['ruta_video']."</td>
-                                <td>".$regvideo['tema']."</td>
-                                <td><span class='label label-info label-mini'></span></td>
-                                <td><a class='btn btn-primary' href='editar-video.php?idvideo=".$regvideo['idvideo']."' role='button'>Editar✏️</a></td>
-
-                                <td><a class='btn btn-danger' href='eliminar-video.php?idvideo=".$regvideo['idvideo']."' role='button'>🗑️</a></td>
-                                
-                            </tr>";
-                               }
-                               ?> 
-  </tbody>
-</table>
-    </div>
-    <br>
+    <div class="container form">
+    <form action="<?php $_SERVER["PHP_SELF"]?>"method="post">
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Subtema</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Username" name="subtema" value="<?php echo $fila['subtema']; ?>"aria-describedby="basic-addon1">
 </div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Descripción</span>
+  </div>
+  <input type="text" name="descripcion" class="form-control" class="form-control"value="<?php echo $fila['descripcion']; ?>"aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">No.subtema</span>
+  </div>
+  <input type="text" name="no_subtema" class="form-control" class="form-control"value="<?php echo $fila['no_subtema']; ?>"aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="row mt">
+         <label class="col-sm-2 col-sm-2 control-label">Temas</label>
+          		<div class="col-lg-4">
+          			<div class="form-panel">
+                      <select class="form-control" name="temas" required>
+            <?php
+                while ($fila=$resultado->fetch_assoc()) {?> 
+                <option value="<?php echo $fila['idtema'] ?>"><?php echo $fila['tema']  ?></option>
+            <?php
+                }
+            ?>
+		</select>
+                    </div>
+                </div>
+</div>
+<br>
+<input class="form-control" type="hidden" name="ID" value="<?php echo $ID; ?>">
+<button type="submit" name="editar"class="btn btn-secondary btn-lg btn-block mx-auto btn-e texto-enlace">Editar</button>
+</form>
+<?php
+if (isset($_POST["editar"])) {
+  $subtema = $_POST['subtema'];
+  $no_subtema = $_POST['no_subtema'];
+  $descripcion = $_POST['descripcion'];
+  $temas= $_POST['temas'];
+  $id= $_POST['ID'];
+  $sqlmodificar = "UPDATE subtema SET
+  subtema= '$subtema',
+  no_subtema= '$no_subtema',
+  descripcion = '$descripcion',
+  idtema= '$temas'
+   WHERE idsubtema= '$id'";
+  $modificado = $conexion->query($sqlmodificar);
+  if ($modificado>0) {
+    echo "<script>
+  alert('Registro editado exitosamente');
+  window.location='ver-subtema.php';</script>";
+  }else{
+    echo "<script>
+    alert('Error al modificar');
+    window.location='ver-subtema.php';</script>";
+  }
+}
+?>
+<br><br>
 </section>
 
+
 <script src="../js/script.js"></script>
-<script src="../js/script2.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="../js/bootstrap.min.js"></script>
