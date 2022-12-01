@@ -1,0 +1,24 @@
+body{
+    overflow: scroll;
+}
+.f-c{
+    background-color: #FFFFFF;
+}
+
+.form{
+    margin-top: 10px;
+}
+
+.btn-e{
+    border-radius: 25px;
+    text-decoration: underline;
+    width: 50%;
+}
+
+.texto-enlace{
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.texto{
+    font-family: 'Inter Tight', sans-serif;
+}
