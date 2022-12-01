@@ -2,7 +2,7 @@
 include('conexion/conexion.php');
 session_start(); //verificar si hay usuario logueado
 if(!isset($_SESSION['idusuario'])){
-header("Location:../../login.php");
+header("Location:../login.php");
 }
 //mostrar informacion de usuario logueado
 $iduser=$_SESSION['idusuario'];

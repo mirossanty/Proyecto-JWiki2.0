@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/contacto.css">
-    <title>Contacto</title>
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
             <img src="img/arrow-back.png" width="32" height="32" class="d-inline-block align-top" alt="">
              Volver al inicio
         </a>
-        <span class="navbar-text active titulo"><h4>Contacto</h4></span>
+        <span class="navbar-text-active titulo text-white"><h4>CONTACTO</h4></span>
     </nav>
     </header>
     <main>
@@ -66,9 +66,6 @@
             </form>
         </div>
     </main>
-    <br>
-    <br>
-    <br>
     <br>
     <div>
 

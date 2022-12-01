@@ -7,13 +7,13 @@
   box-sizing: border-box;
   font-family: 'Inter Tight', sans-serif;
 }
-body{
+/* body{
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #EFEFEF;
-}
+} */
 .slide-container{
   max-width: 1120px;
   width: 100%;
@@ -142,4 +142,17 @@ body{
   .swiper-navBtn{
     display: none;
   }
+}
+
+.bg-jwiki1{
+  background-color: rgb(138, 108, 247);
+}
+
+.titulo{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+}
+
+.nav-item{
+  text-decoration: underline;
 }

@@ -8,7 +8,7 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Drop Down Sidebar Menu | CodingLab </title>
+    <title> Contenido </title>
     <link rel="stylesheet" href="css/estilo-sidebar.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -56,8 +56,6 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
         ?>
           <li><a class="link_name" href="#<?php echo "nivel".$dato -> idnivel ?>"><?php echo $dato -> nivel ?></a></li>
           <li><a href="contenido.php?idtema=<?php echo $dato_tema -> idtema ?>"><?php echo $dato_tema -> tema ?></a></li>
-          <!-- <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP & MySQL</a></li> -->
           <?php
             }
           ?>
@@ -67,36 +65,7 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
     <?php
      }
     ?>
-      <!-- <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Nivel Intermedio</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Nivel Intermedio</  a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
-          </ul>
-        </li>
-      <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Nivel Avanzado</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Nivel Avanzado</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
-        </ul>
-      </li> -->
+      
     <div class="profile-details">
       <div class="profile-content">
         <img src="img/logo2.jpeg" alt="profileImg">
@@ -118,52 +87,133 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
 </ul>
 </div>
   <section class="home-section">
+  <?php
+    if(isset($_GET['idtema'])){
+      $idtema= $_GET['idtema'];
+      $sentencia_tema = $bd->prepare("SELECT * FROM tema WHERE idtema=?;");
+      $sentencia_tema->execute([$idtema]);
+      $tema = $sentencia_tema->fetch(PDO::FETCH_OBJ);
+  
+      $sentencia = $bd->prepare("SELECT * FROM parrafo inner join tema on parrafo.idtema = tema.idtema WHERE parrafo.idtema=? ORDER BY no_parrafo;");
+      $sentencia->execute([$idtema]);
+      $parrafos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+  
+      $sentencia_codigo = $bd->prepare("SELECT * FROM codigo WHERE idtema=?;");
+      $sentencia_codigo->execute([$idtema]);
+      $codigos = $sentencia_codigo->fetchAll(PDO::FETCH_OBJ);
+  
+      $sentencia_referencia = $bd->prepare("SELECT * FROM referencia WHERE idtema=? order by referencia asc;");
+      $sentencia_referencia->execute([$idtema]);
+      $referencias = $sentencia_referencia->fetchAll(PDO::FETCH_OBJ);
+  
+      $sentencia_video = $bd->prepare("SELECT * FROM video WHERE idtema=?;");
+      $sentencia_video->execute([$idtema]);
+      $videos = $sentencia_video->fetchAll(PDO::FETCH_OBJ); 
+  
+     $sentencia_subtema = $bd->prepare("SELECT * FROM subtema WHERE idtema=? order by no_subtema;");
+      $sentencia_subtema->execute([$idtema]);
+      $subtemas = $sentencia_subtema->fetchAll(PDO::FETCH_OBJ); 
+  ?>
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="titulo"><h2>Bienvenido al contenido de JWiki</h2z></span>
+      <span class="titulo"><h2><?php echo $tema->tema; ?></h2></span>
     </div>
     <hr>
-<br><br>
-<!-- <p class="texto">En esta sección encontraras todos los temas referentes a Java y podras consultarlos siempre que quieras y necesites.
-En cada nivel de se encuentra un tema que puede ser de tu interés, a la vez se muestran videos y fragmentos de ejemplo de código asi como ejemplos prácticos. Finalmente para poder ser mas de ayuda para tus trabajos académicos si eres un maestro o estudiante, al final adjuntamos las fuentes consultadas de la información de nuestro contenido.
-Y recuerda que si puedes imaginarlo puedes programarlo...</p> -->
-  <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <br>
-  <h3 class="subtitulo">Subtema</h3>
-  <br>
-  <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <br>
+  <br><br>
+    <?php
+      foreach($parrafos as $dato){
+    ?>
+      <p><?php echo $dato->parrafo; ?></p>
+    <?php
+      }
+    ?>
+    <?php
+      foreach($subtemas as $dato){
+      $idsubtema = $dato->idsubtema;
+    ?>
+    <h4 class="subtitulo"><?php echo $dato->subtema; ?></h4>
+      <?php
+        $sentencia_ps = $bd->prepare("SELECT * FROM subparrafo WHERE idsubtema=$idsubtema order by no_subparrafo;");
+        $sentencia_ps->execute();
+        $subparrafos = $sentencia_ps->fetchAll(PDO::FETCH_OBJ);
+        foreach($subparrafos as $dato2){
+      ?>
+      <p><?php echo $dato2->subparrafo; ?></p>
+      <?php
+         }
+      ?>
+      <?php
+        }
+      ?>
+    <br>
+  <div class="recursos">
+    <h3 class="subtitulo">Recursos visuales</h3>
+    <hr><br>
+  </div>
   <div class="video">
+    <?php
+      foreach ($codigos as $dato){
+    ?>
     <center>
-    <h3 class="subtitulo">Ejemplo pratico</h3>
-    <div class="card" style="width: 40rem;">
-      <img src="" class="card-img-top" alt="...">
-      <div class="card-body exp">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h3 class="subtitulo">Ejemplo pr&aacute;ctico</h3>
+      <div class="card" style="width: 40rem;">
+        <img src="<?php echo 'img/codigos/'.$dato->ruta_imagen; ?>" class="card-img-top" alt="...">
+        <div class="card-body exp">
+          <p class="card-text"><?php echo $dato->explicacion; ?></p>
+        </div>
       </div>
-    </div>
-    </center>
+      </center>
+    <?php
+      }
+    ?>
   </div>
   <br>
   <div class="video">
+    <?php
+      foreach($videos as $dato){
+    ?>
     <center>
       <h3 class="subtitulo">Video tutorial</h3>
       <div class="card text-dark bg-light mb-3" style="max-width: 40rem;">
-        <div class="card-header tit-v"><h4 class="text-white"><b>Titulo video</b></h4></div>
+        <div class="card-header tit-v"><h4 class="text-white"><b><?php echo $dato->titulo ?></b></h4></div>
           <div class="card-body exp">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/yUQsB6YeiXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="<?php echo $dato->ruta_video ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </center>
+      <?php
+      }
+      ?>
   </div>
-<div class="referencias">
-  <h3 class="subtitulo">Referencias</h3>
-  <hr>
-  <ol class="container-fluid">
-    <li>Referencia 1</li>
-    <li>Referencia 2</li>
-  </ol>
-</div>
+  <br>
+  <div class="referencias">
+    <h3 class="subtitulo">Referencias</h3>
+    <hr>
+    <div class="container-fluid">
+      <?php
+        foreach ($referencias as $dato){
+          echo "<ul>";
+            echo "<li>".$dato->referencia."</li>";
+          echo "</ul>";
+        }
+      ?>
+    </div>
+  </div>
+<?php
+  }else{
+?>
+  <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="titulo"><h2>Bienvenido al contendio de JWiki</h2></span>
+  </div>
+    <hr>
+      <br><br>
+      <p class="texto">En esta sección encontraras todos los temas referentes a Java y podras consultarlos siempre que quieras y necesites.
+      En cada nivel de se encuentra un tema que puede ser de tu interés, a la vez se muestran videos y fragmentos de ejemplo de código asi como ejemplos prácticos. Finalmente para poder ser mas de ayuda para tus trabajos académicos si eres un maestro o estudiante, al final adjuntamos las fuentes consultadas de la información de nuestro contenido.
+      Y recuerda que si puedes imaginarlo puedes programarlo...</p>
+<?php
+  }
+?>
 </section>
 
  
