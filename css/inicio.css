@@ -112,3 +112,22 @@
     width: 180px;
     height: 150px;
 }
+
+.texto1{
+    font-family: 'Inter Tight', sans-serif;
+    color:rgba(19, 19, 19, 0.995);
+}
+
+.oscuro .texto1{ 
+    background: #1f1f1f; 
+    color: #f1eded; 
+}
+
+.oscuro {
+    background: #1f1f1f;   
+}
+
+.btn{
+  border: none;
+  color: #fff;
+}

@@ -9,6 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="css/estilo-website1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Inicio</title>
 </head>
 <body>
@@ -38,8 +39,9 @@
     <div class="col-8">
       <div class="img-c">
         <img src="img/logo.png"class="mx-auto" alt="">
+        <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button>
       </div>
-      <div class="texto-c texto">
+      <div class="texto-c texto1">
         <p>
           Bienvenido a JWiki, esperamos que nuestra informacion te sea &uacute;til y puedas tener una
           experiencia agradable. Para acceder al contenido has clic sobre el siguiente bot&oacute;n:
@@ -66,7 +68,7 @@
         <div class="row">
           <h4 class="subtitulo">HISTORIA</h4>
         </div>
-        <div class="row texto">
+        <div class="row texto1">
           <p>
            Java se cre&oacute; como una herramienta de programaci&oacute;n para ser usada en un proyecto de set-top-box en una pequeña operaci&oacute;n denominada the Green Project en Sun Microsystems en 1991. El equipo (Green Team), compuesto por trece personas y dirigido por James Gosling, trabajó durante 18 meses en Sand Hill Road, en Menlo Park, para desarrollarlo.
           </p>
@@ -91,7 +93,7 @@
               <h4 class="subtitulo">PRINCIPALES USOS</h4>
             </div>
           </div>
-        <div class="row texto">
+        <div class="row texto1">
           <p class="text-right">
           Uno de los usos más prestigiosos de Java es el de herramientas educativas como hojas de finanzas, calculadora, gráficos, herramientas para gestionar el tiempo, composición, ejercicios.
           </p>
@@ -136,7 +138,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title subtitulo">Visi&oacute;n</h5>
-                <p class="card-text texto">Formar una cmunidad de desarrolladores de Java de forma colabrativa para trascender en el mundo de la programaci&oacute;n.</p>
+                <p class="card-text texto">Formar una comunidad de desarrolladores de Java de forma colabrativa para trascender en el mundo de la programaci&oacute;n.</p>
               </div>
             </div>
           </div>
@@ -213,6 +215,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/f09689b89n.js" crossorigin="anonymous"></script> <!--FontAwesome 5-->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/oscuro.js"></script>
 </body>
 </html>

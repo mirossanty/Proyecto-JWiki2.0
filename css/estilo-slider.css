@@ -156,3 +156,13 @@
 .nav-item{
   text-decoration: underline;
 }
+
+.oscuro .description{ 
+    background: #1f1f1f; 
+    color: #f1edf1; 
+}
+
+.btn{
+  border: none;
+  color: #fff;
+}

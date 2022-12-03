@@ -92,3 +92,8 @@ nav ul li a:hover{
   border: 1px solid #fff;
   color: #fff;
 }
+
+.btn{
+  border: none;
+  color: #fff;
+}
