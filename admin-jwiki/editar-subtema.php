@@ -47,9 +47,7 @@ $fila= $resultadosubtema->fetch_assoc();
             </center>
           </div>
           <div class="name">
-            <h4 class="text-center text-white"><?php
-                  echo utf8_decode($row['nombreR']);
-                  ?></h4>
+            <h4 class="text-center text-white"><!--nombre borrado--></h4>
           </div>
         </div>
        </div>
@@ -136,7 +134,9 @@ $fila= $resultadosubtema->fetch_assoc();
       <div class="profile-content">
         <img src="../img/logo2.jpeg" alt="profileImg">
         <div class="name-job">
-        <div class="profile_name"></div>
+        <div class="profile_name"><?php
+                  echo utf8_decode($row['nombreR']);
+                  ?></div>
         <div class="job"> <li>
         <a href="cerrarsesion.php">
           <span class="link_name">Cerrar sesi&oacute;n</span>
