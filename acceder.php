@@ -1,28 +1,3 @@
-<?php
-include("admin-jwiki/conexion/conexion.php");
-session_start();
-if(isset($_SESSION['idusuario'])){
-header("Location:admin-jwiki/admin.php");
-}
-if(!empty($_POST)){
-$usuario = mysqli_real_escape_string($conexion,$_POST['usuario']);
-$contrasena = mysqli_real_escape_string($conexion,$_POST['contrasena']);
-$contrasena_encriptada=sha1($contrasena);
-$sql= "SELECT idusuario,idrol FROM usuario WHERE usuario='$usuario'  AND contrasena='$contrasena_encriptada'";
-$resultado=$conexion->query($sql);
-$fila=$resultado->num_rows; //verificar si obtuvo registros
-if($fila>0){
-$fila=$resultado->fetch_assoc(); 
-$_SESSION['idusuario']=$fila['idusuario'];
-$_SESSION['idrol']=$fila['idrol'];
-header('Location:admin-jwiki/admin.php');
-}else{
-echo "<script>
-alert('Usuario o contraseña incorrectos');
-window.location='acceder.php';</script>";
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,12 +16,12 @@ window.location='acceder.php';</script>";
         <div class="hide-section">
           <h2 class="collapsed-heading">¿Ya tienes una cuenta?</h2>
           <p class="collapsed-text"><br>Presiona el siguiente botón</p>
-            <button class="collapsed-btn" onclick="toggleOpen()">Registrarse</button>
+            <button class="collapsed-btn" onclick="toggleOpen()">Iniciar sesión</button>
         </div>
       </div>
       <div class="form-wrapper login">
         <h2 class="form-heading">Ingresa a tu perfil</h2>
-        <form  action="<?php $_SERVER["PHP_SELF"];?>" method="POST" class="form login">
+        <form  action="php/ingresar.php" method="POST" class="form login">
           <span>Ingresa tus datos:</span>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
@@ -74,7 +49,7 @@ window.location='acceder.php';</script>";
 // session_start();
 // if(isset($_SESSION['usuario'])){
 // header("location: php/bienvenido.php");
-// }   /*al iniciar sesion desde login manda a esa direccion "bienvenido.php"*/
+// }   /al iniciar sesion desde login manda a esa direccion "bienvenido.php"/
 include('admin-jwiki/conexion/conexion.php');
 $sql="SELECT idrol,rol FROM rol WHERE idrol=2";
 $resultado=$conexion->query($sql);
@@ -102,7 +77,7 @@ window.location='acceder.php';</script>";
         if ($resultadouser>0) {
             echo "<script>
 alert('Registro exitoso');
-window.location='login.php';</script>";
+window.location='acceder.php';</script>";
         }else{
             echo "<script>
 alert('Error al registrarse');
@@ -114,11 +89,11 @@ window.location='acceder.php';</script>";
       <div class="form-wrapper signup hidden">
         <h4 class="form-heading">Registrate</h4>
         <div class="other-icons">
-        <form action="registroProceso.php" method="POST" class="form login">
+        <form action="" method="POST" class="form login">
           <!-- <span>Ingresa tus datos</span> -->
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Nombre" name="nombre" value="">
+            <input type="text" placeholder="Nombre" name="nombreR" value="">
           </div>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -130,7 +105,7 @@ window.location='acceder.php';</script>";
           </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Correo electrónico" value="">
+            <input type="email" placeholder="Correo electrónico" name="email"value="">
           </div>
           <div class="input-field">
             <i class="fas fa-user"></i>
