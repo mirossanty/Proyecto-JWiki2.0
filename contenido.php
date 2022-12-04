@@ -70,9 +70,6 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
       <div class="profile-content">
         <img src="img/logo2.jpeg" alt="profileImg">
         <div class="name-job">
-        <div class="profile_name"><?php
-                  echo utf8_decode($row['nombreR']);
-                  ?></div>
         <div class="job"> <li>
         <a href="index.php">
           <span class="link_name">Volver al inicio</span>
@@ -213,6 +210,11 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
       <p class="texto">En esta sección encontraras todos los temas referentes a Java y podras consultarlos siempre que quieras y necesites.
       En cada nivel de se encuentra un tema que puede ser de tu interés, a la vez se muestran videos y fragmentos de ejemplo de código asi como ejemplos prácticos. Finalmente para poder ser mas de ayuda para tus trabajos académicos si eres un maestro o estudiante, al final adjuntamos las fuentes consultadas de la información de nuestro contenido.
       Y recuerda que si puedes imaginarlo puedes programarlo...</p>
+      <div class="container">
+        <center>
+          <img src="img/bienvenido.png" alt="..." class="mx-auto">
+        </center>
+      </div>
 <?php
   }
 ?>

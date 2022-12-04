@@ -24,6 +24,11 @@ $row=$resultado->fetch_assoc();//array asociativo
     <link rel="stylesheet" href="../css/admin.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<style>
+  body{
+    background-color: #E4E9F7;
+  }
+</style>
 <body>
 <div class="sidebar">
       <div class="logo-details">
@@ -145,94 +150,31 @@ $row=$resultado->fetch_assoc();//array asociativo
 </div>
 
 <section class="home-section">
-<div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="titulo"><h2>Bienvenido al panel de colaboradores</h2z></span>
-</div>
-<div class="container f-c texto">
-    <br>
-    <div class="container form">
-    <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
+  <div class="home-content">
+    <i class='bx bx-menu' ></i>
+    <span class="titulo"><h2>Bienvenido al panel de colaboradores</h2z></span>
   </div>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-
-<div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <span class="input-group-text" id="basic-addon2">@example.com</span>
-  </div>
-</div>
-
-<label for="basic-url">Your vanity URL</label>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-  </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text">$</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-  <div class="input-group-append">
-    <span class="input-group-text">.00</span>
-  </div>
-</div>
-
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">With textarea</span>
-  </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
-<br>
-<button type="button" class="btn btn-secondary btn-lg btn-block mx-auto btn-e texto-enlace">ENVIAR</button>
+  <hr>
+  
+  <h4>De parte del equipo JWiki...</h4>
+  <p>Te damos la bienvenida a JWiki. En esta sección de JWiki podrás agregar la información que como colaborador tienes derecho de aportar.</p>
+  <p>En la sección de la derecha encontrarás las diferentes opciones para agregar información, desde párrafos a un tema de tu elección, hasta código de ejemplo que será un gran aporte para los visitantes a la wiki y nuestros colaboradores.Ten en cuenta que todos podemos poner nuestro granito de arena para construir y alimentar la wiki, pero hazlo con responsabilidad para ayudar a todos los lectores.</p>
+  <b>Notas de los creadores de JWiki</b> 
+  <p>
+    <div class="container">
+        <ol>
+                <li>En las secciones de párrafo,subtema y subparrafo está la opción de colocar el número de posición en el que queremos colocar ya sea el párrafo, subtema o subparrafo; sin embargo hay que tomar en cuenta que si la posición que elijas como colaborador esta ocupada, se colocará tu contenido en el siguiente lugar disponible. Por ejemplo si elijes la 1 y se encuentra ocupada, se colocara en el dos si se encuentra libre.</li>
+                <li>Para colocar el link en la sección de vídeos, te recomendamos subir tu ejemplo a youtube y seguido de esto, colocar el link que se genera cuando se coloca la opcion de compartir e incrustrar como html<></li>
+                <li>Te sugerimos siempre verificar antes de guardar tu información si estas en el tema o subtema que escogiste, para evitar que se suba en otra sección que no corresponde.</li>
+                                
+        </ol>
     </div>
-    <br>
-</div>
-<br><br>
-<div class="container f-c">
-    <br>
-    <div class="table">
-    <table class="table table-bordered border-dark">
-  <caption>List of users</caption>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-    <br>
-</div>
+  </p>
+  <div class="container">
+    <center>
+      <img src="../img/bienvenido.jpeg" alt="...">
+    </center>
+  </div>
 </section>
 
 
