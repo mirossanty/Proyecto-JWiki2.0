@@ -1,6 +1,5 @@
 body{
     overflow: scroll;
-    background-color: #E4E9F7;
 }
 
 hr{
@@ -35,3 +34,31 @@ hr{
     background-color: #8296EF;
 }
 
+.oscuro .home-section{ 
+    color: #f1eded; 
+}
+
+.oscuro .titulo{ 
+    background: #1f1f1f; 
+    color: #f1eded; 
+}
+
+.oscuro .texto{ 
+    background: #1f1f1f; 
+    color: #f1eded; 
+}
+
+.oscuro .subtitulo{ 
+    background: #1f1f1f; 
+    color: #f1eded; 
+}
+
+.oscuro p{ 
+    background: #1f1f1f; 
+    color: #f1eded; 
+}
+
+.btn{
+    border: none;
+    color: #fff;
+  }
