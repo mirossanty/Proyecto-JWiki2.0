@@ -18,6 +18,7 @@
              Volver al inicio
         </a>
         <span class="navbar-text-active titulo text-white"><h4>CONTACTO</h4></span>
+        <!-- <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button> -->
     </nav>
     </header>
     <main>
@@ -59,7 +60,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <p class="text-justify texto"> JWiki es una aplicaci&oacute;n desarrada por alumnos de la carrera de Ing. en Desarrollo y Gesti&oacute;n de Software de la Universidad Tecnol&oacute;gica del Sureste de Veracruz, dicha universidad se encuentra en la siguiente ubicaci&oacute;n. </p>
                         <div class="ubicacion">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15174.00518360293!2d-94.4017236!3d18.0483335!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfacfdae8bf7da4c1!2sUniversidad%20Tecnol%C3%B3gica%20del%20Sureste%20de%20Veracruz!5e0!3m2!1ses!2smx!4v1668303458058!5m2!1ses!2smx" width="650" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15174.00518360293!2d-94.4017236!3d18.0483335!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfacfdae8bf7da4c1!2sUniversidad%20Tecnol%C3%B3gica%20del%20Sureste%20de%20Veracruz!5e0!3m2!1ses!2smx!4v1668303458058!5m2!1ses!2smx" width="690" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div> 
                     </div>                  
                 </div>    

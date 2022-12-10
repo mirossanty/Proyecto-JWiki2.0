@@ -39,7 +39,7 @@
     <div class="col-8">
       <div class="img-c">
         <img src="img/logo.png"class="mx-auto" alt="">
-        <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button>
+        <!-- <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button> -->
       </div>
       <div class="texto-c texto1">
         <p>
@@ -50,7 +50,7 @@
     </div>
     <div class="col-4">
       <br><br><br><br><br><br>
-      <button id="btnContenido" type="button" class="btn btn-lg btn-block btn-c texto-enlace"><a href="contenido.php">Ver contenido</a></button>
+      <a href="contenido.php"><button id="btnContenido" type="button" class="btn btn-lg btn-block btn-c texto-enlace">Ver contenido</button></a>
     </div>
   </div>
   <br>
@@ -165,25 +165,25 @@
              >
       <!-- Left -->
       <div class="me-5">
-        <span class="texto">Contactanos a trav&eacute;s de nuestras redes sociales:</span><br>
+        <span class="texto">Contactanos a trav&eacute;s de nuestras redes sociales:</span>
       </div>
       <!-- Left -->
 
       <!-- Right -->
       <div>
-        <a href="#" class="text-white me-4">
+        <a href="https://www.facebook.com/JWiki-20-102093422752583" class="text-white me-4">
           <img src="img/ico-face.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://twitter.com/JWikiUTSV" class="text-white me-4">
           <img src="img/ico-twitter.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://www.instagram.com/jwiki_utsv/" class="text-white me-4">
           <img src="img/ico-insta.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://www.linkedin.com/in/jwiki-utsv-614499259/" class="text-white me-4">
           <img src="img/ico-linkendin.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://github.com/JwikiUtsv" class="text-white me-4">
           <img src="img/ico-git.png" alt="">
         </a>
       </div>
@@ -199,7 +199,7 @@
 
     <!-- Copyright -->
     <div
-         class="text-center p-3 texto"
+         class="text-center p-3 text-white texto"
          style="background-color: rgb(138, 108, 247)"
          >
       © 2022 Copyright:

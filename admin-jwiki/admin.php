@@ -157,24 +157,19 @@ $row=$resultado->fetch_assoc();//array asociativo
   <hr>
   
   <h4>De parte del equipo JWiki...</h4>
-  <p>Te damos la bienvenida a JWiki. En esta sección de JWiki podrás agregar la información que como colaborador tienes derecho de aportar.</p>
-  <p>En la sección de la derecha encontrarás las diferentes opciones para agregar información, desde párrafos a un tema de tu elección, hasta código de ejemplo que será un gran aporte para los visitantes a la wiki y nuestros colaboradores.Ten en cuenta que todos podemos poner nuestro granito de arena para construir y alimentar la wiki, pero hazlo con responsabilidad para ayudar a todos los lectores.</p>
+  <p class="text-justify">Te damos la bienvenida a JWiki. En esta sección de JWiki podrás agregar la información que como colaborador tienes derecho de aportar.</p>
+  <p class="text-justify">En la sección de la derecha encontrarás las diferentes opciones para agregar información, desde párrafos a un tema de tu elección, hasta código de ejemplo que será un gran aporte para los visitantes a la wiki y nuestros colaboradores.Ten en cuenta que todos podemos poner nuestro granito de arena para construir y alimentar la wiki, pero hazlo con responsabilidad para ayudar a todos los lectores.</p>
   <b>Notas de los creadores de JWiki</b> 
   <p>
     <div class="container">
         <ol>
-                <li>En las secciones de párrafo,subtema y subparrafo está la opción de colocar el número de posición en el que queremos colocar ya sea el párrafo, subtema o subparrafo; sin embargo hay que tomar en cuenta que si la posición que elijas como colaborador esta ocupada, se colocará tu contenido en el siguiente lugar disponible. Por ejemplo si elijes la 1 y se encuentra ocupada, se colocara en el dos si se encuentra libre.</li>
-                <li>Para colocar el link en la sección de vídeos, te recomendamos subir tu ejemplo a youtube y seguido de esto, colocar el link que se genera cuando se coloca la opcion de compartir e incrustrar como html<></li>
-                <li>Te sugerimos siempre verificar antes de guardar tu información si estas en el tema o subtema que escogiste, para evitar que se suba en otra sección que no corresponde.</li>
+                <li class="text-justify">En las secciones de párrafo,subtema y subparrafo está la opción de colocar el número de posición en el que queremos colocar ya sea el párrafo, subtema o subparrafo; sin embargo hay que tomar en cuenta que si la posición que elijas como colaborador esta ocupada, se colocará tu contenido en el siguiente lugar disponible. Por ejemplo si elijes la 1 y se encuentra ocupada, se colocara en el dos si se encuentra libre.</li>
+                <li class="text-justify">Para colocar el link en la sección de vídeos, te recomendamos subir tu ejemplo a youtube y seguido de esto, colocar el link que se genera cuando se coloca la opcion de compartir e incrustrar como html<></li>
+                <li class="text-justify">Te sugerimos siempre verificar antes de guardar tu información si estas en el tema o subtema que escogiste, para evitar que se suba en otra sección que no corresponde.</li>
                                 
         </ol>
     </div>
   </p>
-  <div class="container">
-    <center>
-      <img src="../img/bienvenido.jpeg" alt="...">
-    </center>
-  </div>
 </section>
 
 
