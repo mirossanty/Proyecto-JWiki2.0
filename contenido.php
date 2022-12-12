@@ -17,6 +17,7 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
     <!-- CSS -->
     <link rel="stylesheet" href="css/contenido.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
    </head>
 <body>
   <div class="sidebar close">
@@ -215,19 +216,21 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
       <button type="button" class="restablecer btn btn-danger">Restablecer</button>
     <hr>
       <br>
-      <div class="row">
-        <div class="col">
-          <br><br><br><br><br><br>
-          <p class="text-justify texto">En esta sección encontraras todos los temas referentes a Java y podras consultarlos  siempre que quieras y necesites.En cada nivel de se encuentra un tema que puede ser de tu interés, a la vez se muestran videos y fragmentos de ejemplo de código asi como ejemplos prácticos. Finalmente para poder ser mas de ayuda para tus trabajos académicos si eres un maestro o estudiante, al final adjuntamos las fuentes consultadas de la información de nuestro contenido. Y recuerda que si puedes imaginarlo puedes programarlo...</p>
-        </div>
-        <div class="col">
-          <div class="container">
-            <center>
-              <img src="img/Bienvenido.jpeg" alt="..." class="mx-auto">
-            </center>
-          </div>
-        </div>
       </div>
+      <section class="services contenedor" id="servicio2">
+        <!-- <h2 class="subtitulo2">Bienvenido</h2> -->
+            <div class="contenedor-servicio">
+                <img src="img/Search Engine.svg" alt="">
+                <div class="checklist-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Introducción</h3>
+                        <p>En esta sección encontraras todos los temas referentes a Java y podras consultarlos  siempre que quieras y necesites.En cada nivel de se encuentra un tema que puede ser de tu interés, a la vez se muestran videos y fragmentos de ejemplo de código asi como ejemplos prácticos. Finalmente para poder ser mas de ayuda para tus trabajos académicos si eres un maestro o estudiante, al final adjuntamos las fuentes consultadas de la información de nuestro contenido. Y recuerda que si puedes imaginarlo puedes programarlo...</p>
+                    </div>
+
+                </div>
+					
+            </div>
+        </section>
 <?php
   }
 ?>
