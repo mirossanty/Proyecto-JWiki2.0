@@ -39,10 +39,16 @@
     <div class="col-8">
       <div class="img-c">
         <img src="img/logo.png"class="mx-auto" alt="">
+        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Botones">
+          <button type="button" class="disminuir btn btn-dark mr-1 ">Disminuir</button>
+          <button type="button" class="aumentar btn btn-dark mr-1">Aumentar</button>
+          <button type="button" class="restablecer btn btn-danger">Restablecer</button>
+      </div>
         <!-- <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button> -->
       </div>
       <div class="texto-c texto1">
         <p>
+          <br>
           Bienvenido a JWiki, esperamos que nuestra informacion te sea &uacute;til y puedas tener una
           experiencia agradable. Para acceder al contenido has clic sobre el siguiente bot&oacute;n:
         </p>
@@ -123,7 +129,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title subtitulo">Misi&oacute;n</h5>
-                <p class="card-text texto">Ayudar a estudiantes y desarrolladores que utiicen el lenguaje Java aen cuanto a la documentación del mismo.</p>
+                <p class="card-text texto">Ayudar a estudiantes y desarrolladores que utiicen el lenguaje Java en cuanto a su documentación.</p>
               </div>
             </div>
           </div>
@@ -133,12 +139,12 @@
       <div class="card mb-3 tarjeta" style="max-width: 540px;">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="img/logo-ti.png" class="img-card" alt="...">
+              <img src="img/logoti4.jpeg" class="img-card" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title subtitulo">Visi&oacute;n</h5>
-                <p class="card-text texto">Formar una comunidad de desarrolladores de Java de forma colabrativa para trascender en el mundo de la programaci&oacute;n.</p>
+                <p class="card-text texto">Formar una comunidad de desarrolladores de Java de forma colaborativa.</p>
               </div>
             </div>
           </div>
@@ -217,6 +223,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/f09689b89n.js" crossorigin="anonymous"></script> <!--FontAwesome 5-->
 <script src="js/bootstrap.min.js"></script>
-<script src="js/oscuro.js"></script>
+<script src="js/zoom.js"></script>
 </body>
 </html>

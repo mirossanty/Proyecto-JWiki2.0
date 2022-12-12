@@ -22,8 +22,11 @@
                     <img src="img/arrow-back.png" width="32" height="32" class="d-inline-block align-top" alt="">
                      Volver al inicio
                 </a>
-                <span class="navbar-text-active titulo text-white"><h4>¿CÓMO COLABORAR?</h4></span>
-                <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button>
+                <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Botones">
+                    <button type="button" class="disminuir btn btn-dark mr-1 ">Disminuir</button>
+                    <button type="button" class="aumentar btn btn-dark mr-1">Aumentar</button>
+                    <button type="button" class="restablecer btn btn-danger">Restablecer</button>
+                </div>
             </nav>
         </header>
 
@@ -203,5 +206,5 @@
 
     <!-- JavaScript -->
     <script src="js/script-slider.js"></script>
-    <script src="js/oscuro.js"></script>
+    <script src="js/zoomcolaborar.js"></script>
 </html>

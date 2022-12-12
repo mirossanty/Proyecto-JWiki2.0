@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/contacto.css">
-    <title>Document</title>
+    <title>Contáctanos</title>
 </head>
 <body>
     <header>
@@ -17,6 +17,11 @@
             <img src="img/arrow-back.png" width="32" height="32" class="d-inline-block align-top" alt="">
              Volver al inicio
         </a>
+        <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Botones">
+          <button type="button" class="disminuir btn btn-dark mr-1 ">Disminuir</button>
+          <button type="button" class="aumentar btn btn-dark mr-1">Aumentar</button>
+          <button type="button" class="restablecer btn btn-danger">Restablecer</button>
+      </div>
         <span class="navbar-text-active titulo text-white"><h4>CONTACTO</h4></span>
         <!-- <button type="button" class="btn btn-blue" onclick="cambiarModo()">Oscuro / Claro</button> -->
     </nav>
@@ -132,5 +137,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/zoomcontacto.js"></script>
 </body>
 </html>

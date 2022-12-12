@@ -118,8 +118,11 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
       <i class='bx bx-menu' ></i>
       <span class="titulo"><h2><?php echo $tema->tema; ?></h2></span>
     </div>
+    <button type="button" class="disminuir btn btn-dark mr-1">Disminuir</button>
+      <button type="button" class="aumentar btn btn-dark mr-1">Aumentar</button>
+      <button type="button" class="restablecer btn btn-danger">Restablecer</button>
     <hr>
-  <br>
+      <br>
     <?php
       foreach($parrafos as $dato){
     ?>
@@ -205,8 +208,11 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
   <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="titulo"><h2>Bienvenido al contendio de JWiki</h2></span>
+      <span class="titulo"><h2>Bienvenido al contenido de JWiki</h2></span>
   </div>
+  <button type="button" class="disminuir btn btn-dark mr-1">Disminuir</button>
+      <button type="button" class="aumentar btn btn-dark mr-1">Aumentar</button>
+      <button type="button" class="restablecer btn btn-danger">Restablecer</button>
     <hr>
       <br>
       <div class="row">
@@ -217,7 +223,7 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
         <div class="col">
           <div class="container">
             <center>
-              <img src="img/bienvenido.png" alt="..." class="mx-auto">
+              <img src="img/Bienvenido.jpeg" alt="..." class="mx-auto">
             </center>
           </div>
         </div>
@@ -232,5 +238,6 @@ $niveles = $sentencia->fetchAll(PDO::FETCH_OBJ);
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/zoomcontenido.js"></script>
 </body>
 </html>

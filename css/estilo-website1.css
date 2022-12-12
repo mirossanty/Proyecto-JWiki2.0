@@ -40,6 +40,7 @@ nav ul li{
 }
 nav ul li a{
   text-decoration: none;
+  font-size: 18px;
   transition: 0.5s;
 }
 nav ul li a:hover{
@@ -71,6 +72,7 @@ nav ul li a:hover{
 .content p{
   margin-top: 10px;
   line-height: 25px;
+  font-size: 24px;
 }
 .portada{
   color: #fff;
