@@ -93,19 +93,19 @@
 
       <!-- Right -->
       <div>
-        <a href="#" class="text-white me-4">
+        <a href="https://www.facebook.com/JWiki-20-102093422752583" class="text-white me-4">
           <img src="img/ico-face.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://twitter.com/JWikiUTSV" class="text-white me-4">
           <img src="img/ico-twitter.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://www.instagram.com/jwiki_utsv/" class="text-white me-4">
           <img src="img/ico-insta.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://www.linkedin.com/in/jwiki-utsv-614499259/" class="text-white me-4">
           <img src="img/ico-linkendin.png" alt="">
         </a>
-        <a href="" class="text-white me-4">
+        <a href="https://github.com/JwikiUtsv" class="text-white me-4">
           <img src="img/ico-git.png" alt="">
         </a>
       </div>
