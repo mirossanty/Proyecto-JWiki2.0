@@ -21,7 +21,7 @@
       <ul>
         <li><a class="portada" href="index.php">Inicio</a></li>
         <li><a class="portada"href="colaborar.html">Cómo colaborar</a></li>
-        <li><a class="portada"href="acceder.php">Ingresar</a></li>
+        <li><a class="portada"href="login.php">Ingresar</a></li>
         <li><a class="portada"href="contacto.php">Contacto</a></li>
       </ul>
     </nav>
