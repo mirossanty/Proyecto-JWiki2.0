@@ -124,28 +124,6 @@ window.location='login.php';</script>";
   });
 </script>
               
-<script>
-// Obtener el campo de entrada "contrasena" y agregar un evento "input"
-const contrasenaInput = document.getElementById("contrasena");
-contrasenaInput.addEventListener("input", function() {
-  // Obtener el valor actual del campo de entrada "contrasena"
-  const contrasenaValor = contrasenaInput.value;
-  // Verificar si el valor tiene al menos 8 caracteres, una mayúscula, una minúscula y un carácter especial
-  if (contrasenaValor.length >= 8 && /[A-Z]/.test(contrasenaValor) && /[a-z]/.test(contrasenaValor) && /[^A-Za-z0-9]/.test(contrasenaValor)) {
-    // Mostrar que la contraseña es fuerte
-    contrasenaInput.nextElementSibling.textContent = "Contraseña fuerte";
-    contrasenaInput.nextElementSibling.style.color = "green";
-  } else if (contrasenaValor.length >= 6 && /[A-Z]/.test(contrasenaValor) && /[a-z]/.test(contrasenaValor)) {
-    // Mostrar que la contraseña es media
-    contrasenaInput.nextElementSibling.textContent = "Contraseña media";
-    contrasenaInput.nextElementSibling.style.color = "orange";
-  } else {
-    // Mostrar que la contraseña es débil
-    contrasenaInput.nextElementSibling.textContent = "Contraseña débil";
-    contrasenaInput.nextElementSibling.style.color = "red";
-  }
-});
-</script>
     <!-- JS FontAwesome -->
 </body>
 </html>
