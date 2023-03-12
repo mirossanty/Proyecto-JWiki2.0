@@ -123,6 +123,7 @@ window.location='login.php';</script>";
     }
   });
 </script>
+              
 <script>
 // Obtener el campo de entrada "contrasena" y agregar un evento "input"
 const contrasenaInput = document.getElementById("contrasena");
