@@ -107,7 +107,23 @@ window.location='login.php';</script>";
     <!-- JS Particles.js -->
     <script src="js/particles.min.js"></script>
     <script src="js/particlesjs-config.json"></script>
-    
+        <script>
+  // Obtener el campo de entrada "usuario" y agregar un evento "input"
+  const usuarioInput = document.getElementById("usuario");
+  usuarioInput.addEventListener("input", function() {
+    // Obtener el valor actual del campo de entrada "usuario"
+    const usuarioValor = usuarioInput.value;
+    // Verificar si el valor tiene menos de 3 caracteres
+    if (usuarioValor.length < 3) {
+      // Cambiar el color del borde a rojo
+      usuarioInput.style.borderColor = "red";
+    } else {
+      // Cambiar el color del borde a verde
+      usuarioInput.style.borderColor = "green";
+    }
+  });
+</script>
+              
     <!-- JS FontAwesome -->
 </body>
 </html>
