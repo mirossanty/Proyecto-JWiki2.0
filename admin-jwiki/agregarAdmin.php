@@ -187,41 +187,59 @@ if(!empty($_POST)){
 <div class="container f-c texto">
     <br>
     <div class="container form">
-    <form action="<?php $_SERVER["PHP_SELF"]?>"method="post">
+    <form action="<?php $_SERVER["PHP_SELF"]?>"method="post" class="needs-validation" novalidate>
     <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Nombre</span>
   </div>
-  <input type="text" name="nombreR" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="nombreR" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" pattern="[A-Za-z\s]{5,}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Apellidos</span>
   </div>
-  <input type="text" name="apellidos" class="form-control" class="form-control" placeholder="Apellidos" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="apellidos" class="form-control" class="form-control" placeholder="Apellidos" aria-label="Username" aria-describedby="basic-addon1" pattern="[A-Za-z\s]{5,}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Profesión</span>
   </div>
-  <input type="text" name="profesion" class="form-control" placeholder="Profesión" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="profesion" class="form-control" placeholder="Profesión" aria-label="Username" aria-describedby="basic-addon1" pattern="[A-Za-z\s]{3,}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Usuario</span>
   </div>
-  <input type="text" name="usuario" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="usuario" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" pattern="[A-Za-z0-9_-]{4,16}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
 
 <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Email" name="email" required>
+  <input type="text" class="form-control" placeholder="Email" name="email" pattern="[a-zA-Z0-9._%+-]+@ejemplo\.com$" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
   <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">@Email</span>
   </div>
 </div>
 
 <div class="input-group mb-3">
-  <input type="password" class="form-control" placeholder="Contraseña" aria-label="Recipient's username" name="contrasena" required>
+  <input type="password" class="form-control" placeholder="Contraseña" aria-label="Recipient's username" name="contrasena" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
   <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">Contraseña</span>
   </div>
@@ -240,18 +258,40 @@ if(!empty($_POST)){
                 }
               ?>
 			</select>
+      <div class="invalid-feedback">
+    Seleccioe una opcion
+  </div>
     </div>
     </div>
     </div>
 
 
 <br>
-<button type="submit"class="btn btn-secondary btn-lg btn-block mx-auto btn-e texto-enlace">Editar</button>
+<button type="submit"class="btn btn-secondary btn-lg btn-block mx-auto btn-e texto-enlace">GUARDAR</button>
 </form>
 <br><br>
 </section>
 
-
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 <script src="../js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
