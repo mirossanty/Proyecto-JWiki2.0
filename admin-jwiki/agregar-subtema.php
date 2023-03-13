@@ -175,29 +175,38 @@ $resultado=$conexion->query($sql);
 <div class="container f-c texto">
     <br>
     <div class="container form">
-    <form action="<?php $_SERVER["PHP_SELF"]?>"method="post">
+    <form action="<?php $_SERVER["PHP_SELF"]?>"method="post" class="needs-validation" novalidate>
     <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Subtema</span>
   </div>
-  <input type="text" name="subtema" class="form-control" placeholder="Subtema" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="subtema" class="form-control" placeholder="Subtema" aria-label="Username" aria-describedby="basic-addon1" pattern="[A-Za-zÁÉÍÓÚñáéíóú0-9\s.,!?()_-]{10,100}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Descripción del subtema</span>
   </div>
-  <input type="text" name="descripcion" class="form-control" placeholder="descripción" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" name="descripcion" class="form-control" placeholder="descripción" aria-label="Username" aria-describedby="basic-addon1" pattern="[A-Za-zÁÉÍÓÚñáéíóú0-9\s.,!?()_-]{10,300}" required>
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Ingrese el numero de subtema (su posición en el tema seleccionado), tome en cuenta que 1 es el primero, dos el segundo...</span>
   </div>
-  <input type="text" name="no_subtema" class="form-control" class="form-control" placeholder="no. subtema" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="number" name="no_subtema" class="form-control" class="form-control" placeholder="no. subtema" aria-label="Username" aria-describedby="basic-addon1" pattern="\d{1,4}">
+  <div class="invalid-feedback">
+    El valor introducido no es valido, por favor introduce un valor valido
+  </div>
 </div>
-<div class="row mt">
-         <label class="col-sm-2 col-sm-2 control-label">Temas</label>
-          		<div class="col-lg-4">
-          			<div class="form-panel">
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Tema:</span>
+  </div>
                       <select class="form-control" name="temas" required>
                       <?php
               while ($fila=$resultado->fetch_assoc()) {?> 
@@ -208,8 +217,6 @@ $resultado=$conexion->query($sql);
               ?>
 						</select>
     </div>
-    </div>
-    </div>
 
 
 <br>
@@ -217,6 +224,26 @@ $resultado=$conexion->query($sql);
 </form>
 <br><br>
 </section>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 <script src="../js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
