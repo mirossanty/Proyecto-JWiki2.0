@@ -28,7 +28,7 @@ if ($resultadoUsuario->num_rows > 0) {
     $insertarListaNegra = "INSERT INTO listanegra (usuario_list, contrasena_list, idrol_list, nombreR_list, email_list, profesion_list) VALUES ('$usuario', '$contrasena', '$idrol', '$nombreR', '$email', '$profesion')";
     $resultadoListaNegra = $conexion->query($insertarListaNegra);
     if ($resultadoListaNegra) {
-      echo "<script>alert('Usuario agregado a la lista negra exitosamente');</script>";
+      echo "<script>alert('Usuario eliminado y agregado a la lista negra exitosamente');</script>";
     } else {
       echo "<script>alert('Error al agregar usuario a la lista negra');</script>";
     }
