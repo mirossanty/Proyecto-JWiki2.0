@@ -16,25 +16,41 @@ if (!empty($_POST)) {
   $contrasena = mysqli_real_escape_string($conexion, $_POST['contrasena']);
   $contrasena_encriptada = sha1($contrasena);
 
-  $sqlusuario = "SELECT idusuario FROM usuario WHERE usuario='$usuario'";
-  $resultadousuario = $conexion->query($sqlusuario);
-  $filas = $resultadousuario->num_rows;
-  if ($filas > 0) {
-    echo "<script>
-alert('El usuario ya existe');
-window.location='register.php';</script>";
-  } else {
-    $sqlusuario2 = "INSERT INTO usuario(usuario,contrasena,idrol,nombreR,apellidos,email,profesion) VALUES ('$usuario','$contrasena_encriptada','$rolusuario','$nombreR','$apellidos','$email','$profesion')";
-    $resultadouser = $conexion->query($sqlusuario2);
+  // Verificar si el usuario ya está en la lista negra
+  $sqlusuarioListaNegra = "SELECT idlistanegra FROM listanegra WHERE usuario_list='$usuario'";
+  $resultadousuarioListaNegra = $conexion->query($sqlusuarioListaNegra);
+  $filasUsuarioListaNegra = $resultadousuarioListaNegra->num_rows;
 
-    if ($resultadouser > 0) {
+  // Verificar si el email ya está en la lista negra
+  $sqlemailListaNegra = "SELECT idlistanegra FROM listanegra WHERE email_list='$email'";
+  $resultadoemailListaNegra = $conexion->query($sqlemailListaNegra);
+  $filasEmailListaNegra = $resultadoemailListaNegra->num_rows;
+
+  if ($filasUsuarioListaNegra > 0 || $filasEmailListaNegra > 0) {
+    echo "<script>
+    alert('El usuario o el email se encuentran en la lista negra');
+    window.location='register.php';</script>";
+  } else {
+    $sqlusuario = "SELECT idusuario FROM usuario WHERE usuario='$usuario'";
+    $resultadousuario = $conexion->query($sqlusuario);
+    $filas = $resultadousuario->num_rows;
+    if ($filas > 0) {
       echo "<script>
-alert('Registro exitoso');
-window.location='login.php';</script>";
+      alert('El usuario ya existe');
+      window.location='register.php';</script>";
     } else {
-      echo "<script>
-alert('Error al registrarse');
-window.location='register.php';</script>";
+      $sqlusuario2 = "INSERT INTO usuario(usuario,contrasena,idrol,nombreR,apellidos,email,profesion) VALUES ('$usuario','$contrasena_encriptada','$rolusuario','$nombreR','$apellidos','$email','$profesion')";
+      $resultadouser = $conexion->query($sqlusuario2);
+
+      if ($resultadouser > 0) {
+        echo "<script>
+        alert('Registro exitoso');
+        window.location='login.php';</script>";
+      } else {
+        echo "<script>
+        alert('Error al registrarse');
+        window.location='register.php';</script>";
+      }
     }
   }
 }
