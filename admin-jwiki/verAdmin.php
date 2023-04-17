@@ -77,6 +77,7 @@ $resultadousuario = $conexion->query($usuarios);
           <li><a class="link_name" href="#">Temas</a></li>
           <li><a href="verAdmin.php">Ver usuarios</a></li>
           <li><a href="agregarAdmin.php">Agregar usuarios</a></li>
+          <li><a href="ver-listaNegra.php">Ver lista negra</a></li>
         </ul>
       </li>
       <li>
