@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-8">
           <div class="img-c">
-            <img src="img/logo.png" class="mx-auto" alt="">
+            <img src="img/logoJWikiPurple.png" class="mx-auto" alt="">
             <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Botones">
               <button type="button" class="disminuir btn btn-dark mr-1 ">Disminuir</button>
               <button type="button" class="aumentar btn btn-dark mr-1">Aumentar</button>
