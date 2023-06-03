@@ -29,7 +29,7 @@
     <main>
         <div class="container-fluid">
             <div class="row">
-                <img src="img/logo.png" class="mx-auto" alt="">
+                <img src="img/logoJWikiPurple.png" class="mx-auto" alt="">
             </div>
             <div class="row agradecimiento">
                 <h1 class="mx-auto titulo">¡Gracias por visitar JWiki!</h1>
